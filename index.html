@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verifow | Automated AML Compliance</title>
+  <link rel="icon" type="image/png" href="fav.png">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              800: '#112240',
+              900: '#0A192F',
+            },
+            primary: {
+              400: '#4ee5cb',
+              500: '#1ce0be',
+              600: '#14c7a6',
+            },
+            slate: {
+              800: '#1E293B',
+              900: '#0F172A',
+            },
+            offwhite: '#F8FAFC',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Base & Typography */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Smooth Scroll offset for fixed header */
+    html {
+      scroll-padding-top: 5rem;
+    }
+
+    /* Subtle glow for dark mode */
+    .dark .hero-glow {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80vw;
+      height: 80vh;
+      background: radial-gradient(circle, rgba(28, 224, 190, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Interactive Enhancements */
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+      border-color: rgba(28, 224, 190, 0.2);
+    }
+
+    .dark .card-hover:hover {
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Glassmorphism for header */
+    .glass-header {
+      background: rgba(248, 250, 252, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .dark .glass-header {
+      background: rgba(10, 25, 47, 0.75);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-offwhite text-slate-800 dark:bg-navy-900 dark:text-slate-300 transition-colors duration-300 antialiased flex flex-col min-h-screen">
+
+  <!-- Navigation -->
+  <header class="fixed w-full top-0 z-50 glass-header transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="#" class="block">
+            <img src="logo-light.svg" alt="Verifow Logo"
+              class="h-8 md:h-10 w-auto block dark:hidden transition-transform duration-300 hover:scale-105" />
+            <img src="logo-dark.svg" alt="Verifow Logo"
+              class="h-8 md:h-10 w-auto hidden dark:block transition-transform duration-300 hover:scale-105" />
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex space-x-8 items-center">
+          <a href="#features" class="text-sm font-medium hover:text-primary-500 transition-colors">Features</a>
+          <a href="#deployment" class="text-sm font-medium hover:text-primary-500 transition-colors">Deployment</a>
+          <a href="#why-verifow" class="text-sm font-medium hover:text-primary-500 transition-colors">Why Verifow</a>
+          <a href="#contact" class="text-sm font-medium hover:text-primary-500 transition-colors">Contact</a>
+
+          <div class="flex items-center space-x-4 pl-4 border-l border-gray-300 dark:border-gray-700">
+            <!-- Theme Toggle -->
+            <button id="theme-toggle"
+              class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors text-slate-600 dark:text-slate-300"
+              aria-label="Toggle Dark Mode">
+              <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+              <i class="fa-solid fa-sun hidden dark:block text-lg"></i>
+            </button>
+            <a href="#contact"
+              class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-sm font-medium rounded-md text-navy-900 bg-primary-500 hover:bg-primary-600 transition-colors shadow-sm">
+              Request Demo
+            </a>
+          </div>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center space-x-4">
+          <button id="mobile-theme-toggle" class="p-2 text-slate-600 dark:text-slate-300">
+            <i class="fa-solid fa-moon dark:hidden"></i>
+            <i class="fa-solid fa-sun hidden dark:block"></i>
+          </button>
+          <button id="mobile-menu-btn"
+            class="text-slate-600 dark:text-slate-300 hover:text-primary-500 focus:outline-none">
+            <i class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-white dark:bg-navy-800 border-t border-gray-200 dark:border-gray-700">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#features"
+          class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-navy-900">Features</a>
+        <a href="#deployment"
+          class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-navy-900">Deployment</a>
+        <a href="#why-verifow"
+          class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-navy-900">Why
+          Verifow</a>
+        <a href="#contact"
+          class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-navy-900">Contact</a>
+        <a href="#contact"
+          class="mobile-link mt-4 block w-full text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-navy-900 bg-primary-500 hover:bg-primary-600">
+          Request Demo
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <!-- Ambient Glow -->
+      <div class="hero-glow"></div>
+
+      <!-- Gradient overlay for smoother look -->
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-offwhite dark:to-navy-900 pointer-events-none">
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+
+        <h1
+          class="reveal delay-100 text-5xl tracking-tighter font-extrabold text-slate-900 dark:text-white sm:text-6xl md:text-7xl lg:text-8xl mb-8">
+          Automated AML Compliance,<br class="hidden md:block" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">Powered by
+            AI</span>
+        </h1>
+
+        <p
+          class="reveal delay-200 mt-3 max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400 sm:text-xl mb-12 leading-relaxed font-light">
+          Secure your financial operations with AI-driven sanctions screening and intelligent transaction monitoring.
+          Flexible deployment across managed cloud or dedicated local infrastructure for maximum sovereignty.
+        </p>
+
+        <div
+          class="reveal delay-300 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <a href="#contact"
+            class="w-full sm:w-auto px-8 py-3.5 border border-transparent text-base font-semibold rounded-full text-navy-900 bg-primary-500 hover:bg-primary-400 md:py-4 md:text-lg transition-all shadow-md hover:shadow-lg">
+            Request Demo
+          </a>
+          <a href="https://docs.verifow.com/introduction" target="_blank" rel="noopener noreferrer"
+            class="w-full sm:w-auto px-8 py-3.5 border border-slate-200 dark:border-slate-700 text-base font-semibold rounded-full text-slate-700 dark:text-white hover:bg-slate-50 dark:hover:bg-navy-800 md:py-4 md:text-lg transition-all shadow-sm">
+            Read Documentation
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white dark:bg-navy-800 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center mb-16">
+          <h2
+            class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white accent-underline accent-underline-center pb-4">
+            Comprehensive AI Compliance Suite
+          </h2>
+          <p class="mt-8 max-w-2xl mx-auto text-xl text-slate-600 dark:text-slate-400">
+            Everything your risk team needs to meet regulatory demands, powered by state-of-the-art machine learning
+            algorithms.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div
+            class="reveal bg-white dark:bg-navy-900 rounded-2xl p-8 hover:shadow-md transition-shadow border border-gray-200 dark:border-navy-700">
+            <div
+              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 mb-6">
+              <i class="fa-solid fa-shield-halved text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-3">AI-Powered Sanctions
+              Screening</h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Machine learning algorithms instantly verify
+              entities against UN, OFAC, EU, UK, and NiGSAC lists with industry-leading low false positive rates.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="reveal delay-100 bg-white dark:bg-navy-900 rounded-2xl p-8 hover:shadow-md transition-shadow border border-gray-200 dark:border-navy-700">
+            <div
+              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 mb-6">
+              <i class="fa-solid fa-code-branch text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-3">Intelligent Rule Engine
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Empower your compliance team to deploy dynamic
+              risk rules visually. Our AI suggests optimizations without requiring engineering overhead.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="reveal delay-200 bg-white dark:bg-navy-900 rounded-2xl p-8 hover:shadow-md transition-shadow border border-gray-200 dark:border-navy-700">
+            <div
+              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 mb-6">
+              <i class="fa-solid fa-chart-line text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-3">Behavioral Transaction
+              Monitoring</h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Advanced anomaly detection automatically
+              catches complex structuring and suspicious velocity patterns in real-time.</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div
+            class="reveal bg-white dark:bg-navy-900 rounded-2xl p-8 hover:shadow-md transition-shadow border border-gray-200 dark:border-navy-700">
+            <div
+              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 mb-6">
+              <i class="fa-solid fa-file-signature text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-3">Automated Case Management
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Streamline investigations with AI-generated
+              case summaries and immutable, export-ready audit trails perfectly formatted for regulatory reporting.</p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div
+            class="reveal delay-100 bg-white dark:bg-navy-900 rounded-2xl p-8 hover:shadow-md transition-shadow border border-gray-200 dark:border-navy-700">
+            <div
+              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 mb-6">
+              <i class="fa-solid fa-server text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-3">Flexible Deployment
+              Architecture</h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Choose between our fully managed SaaS or a
+              Dedicated VPS to keep all data securely self-hosted within Nigeria for maximum sovereignty.</p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div
+            class="reveal delay-200 bg-white dark:bg-navy-900 rounded-2xl p-8 hover:shadow-md transition-shadow border border-gray-200 dark:border-navy-700">
+            <div
+              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-teal-50 dark:bg-teal-900/20 text-teal-600 dark:text-teal-400 mb-6">
+              <i class="fa-solid fa-gauge-high text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-3">Enterprise-Grade
+              Scalability</h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Handle millions of transactions with sub-100ms
+              latency. Predictable, flat pricing for unlimited scale with no per-module surprises.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Deployment Options Section -->
+    <section id="deployment" class="py-20 bg-offwhite dark:bg-navy-900 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+
+          <div class="w-full lg:w-1/2">
+            <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white pb-4 mb-10">
+              Flexible Deployment Built for Local Compliance
+            </h2>
+            <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+              Whether you are an agile fintech needing rapid go-to-market or a regulated bank requiring strict data
+              localization, Verifow adapts to your infrastructure.
+            </p>
+
+            <div class="space-y-6 mt-8">
+              <div class="flex">
+                <div class="flex-shrink-0 mt-1">
+                  <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary-500 text-navy-900">
+                    <i class="fa-solid fa-cloud"></i>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-xl font-bold text-slate-900 dark:text-white">Multi-tenant SaaS</h4>
+                  <p class="mt-1 text-slate-600 dark:text-slate-400">Managed entirely by us. Quick setup, seamless
+                    automatic updates, and highly scalable. Ideal for fast-moving fintechs.</p>
+                </div>
+              </div>
+
+              <div class="flex">
+                <div class="flex-shrink-0 mt-1">
+                  <div
+                    class="flex items-center justify-center h-8 w-8 rounded-full bg-slate-800 text-white dark:bg-white dark:text-navy-900">
+                    <i class="fa-solid fa-database"></i>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-xl font-bold text-slate-900 dark:text-white">Dedicated VPS (Self-Hosted)</h4>
+                  <p class="mt-1 text-slate-600 dark:text-slate-400">Deploy directly on your own infrastructure or a
+                    Lagos-based data centre. Full data control and isolation for banks and heavily regulated
+                    institutions.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10">
+              <a href="#contact"
+                class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-slate-800 hover:bg-slate-700 dark:text-navy-900 dark:bg-white dark:hover:bg-gray-100 transition-colors">
+                Contact us for custom VPS setup
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Visual representation -->
+          <div class="w-full lg:w-1/2 mt-10 lg:mt-0">
+            <div
+              class="bg-white dark:bg-navy-800 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-navy-700 p-2">
+              <div
+                class="rounded-xl border border-dashed border-gray-300 dark:border-navy-600 bg-gray-50 dark:bg-navy-900/50 p-8">
+                <div class="grid grid-cols-2 gap-4 text-center">
+                  <div
+                    class="bg-white dark:bg-navy-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-navy-700">
+                    <i class="fa-solid fa-bolt text-3xl text-primary-500 mb-3"></i>
+                    <div class="font-bold text-slate-900 dark:text-white">SaaS Cloud</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 mt-2">Instant provisioning</div>
+                  </div>
+                  <div
+                    class="bg-white dark:bg-navy-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-navy-700">
+                    <i class="fa-solid fa-building-shield text-3xl text-slate-600 dark:text-slate-300 mb-3"></i>
+                    <div class="font-bold text-slate-900 dark:text-white">Your Lagos VPS</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 mt-2">100% data sovereignty</div>
+                  </div>
+                </div>
+                <div class="mt-6 text-center text-sm font-medium text-slate-500 dark:text-slate-400">
+                  Unified API • Same features • Zero vendor lock-in
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Verifow Section -->
+    <section id="why-verifow" class="py-20 bg-white dark:bg-navy-800 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl font-extrabold text-slate-900 dark:text-white accent-underline accent-underline-center pb-4">
+            Why Choose Verifow?
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Left: Diagram -->
+          <div
+            class="order-2 lg:order-1 bg-offwhite dark:bg-navy-900 p-8 rounded-2xl border border-gray-200 dark:border-navy-700 shadow-sm relative">
+            <h3 class="text-center text-lg font-bold text-slate-800 dark:text-white mb-8">How It Works</h3>
+
+            <div class="space-y-6">
+              <!-- Step 1 -->
+              <div
+                class="bg-white dark:bg-navy-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-navy-600 flex items-center z-10 relative">
+                <div class="bg-slate-100 dark:bg-navy-900 p-3 rounded-full mr-4 text-primary-500">
+                  <i class="fa-solid fa-globe text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">Global + Local Screening Lists</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Continuous ingestion of OFAC, UN & NiGSAC</p>
+                </div>
+              </div>
+
+              <div class="flex justify-center -my-3 z-0 relative">
+                <i class="fa-solid fa-arrow-down text-gray-300 dark:text-navy-600 text-xl"></i>
+              </div>
+
+              <!-- Step 2 -->
+              <div
+                class="bg-white dark:bg-navy-800 p-4 rounded-lg shadow-sm border border-primary-500/30 flex items-center z-10 relative">
+                <div class="bg-slate-100 dark:bg-navy-900 p-3 rounded-full mr-4 text-primary-500">
+                  <i class="fa-solid fa-microchip text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">Real-time Rules Engine</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Sub-100ms evaluation of custom risk logic</p>
+                </div>
+              </div>
+
+              <div class="flex justify-center -my-3 z-0 relative">
+                <i class="fa-solid fa-arrow-down text-gray-300 dark:text-navy-600 text-xl"></i>
+              </div>
+
+              <!-- Step 3 -->
+              <div
+                class="bg-white dark:bg-navy-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-navy-600 flex items-center z-10 relative">
+                <div class="bg-slate-100 dark:bg-navy-900 p-3 rounded-full mr-4 text-primary-500">
+                  <i class="fa-solid fa-check-double text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">Actionable Verdict & Logging</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Pass, Block, or Flag for Case Management</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Bullet points vs Traditional SaaS -->
+          <div class="order-1 lg:order-2">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Verifow vs Traditional Providers</h3>
+            <ul class="space-y-6">
+              <li class="flex">
+                <span class="text-green-500 mr-4 mt-1"><i class="fa-solid fa-circle-check text-xl"></i></span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white block">No Ghost Rules</strong>
+                  <span class="text-slate-600 dark:text-slate-400">Legacy systems often flag users opaquely. Verifow
+                    provides exact traceability on which rule triggered a block.</span>
+                </div>
+              </li>
+              <li class="flex">
+                <span class="text-green-500 mr-4 mt-1"><i class="fa-solid fa-circle-check text-xl"></i></span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white block">No 429 Rate Limits</strong>
+                  <span class="text-slate-600 dark:text-slate-400">Our infrastructure handles your peak transaction
+                    volumes without artificial throttling or dropped compliance checks.</span>
+                </div>
+              </li>
+              <li class="flex">
+                <span class="text-green-500 mr-4 mt-1"><i class="fa-solid fa-circle-check text-xl"></i></span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white block">Full Auditability</strong>
+                  <span class="text-slate-600 dark:text-slate-400">Every decision, analyst note, and rule change is
+                    immutably logged for painless CBN and external audits.</span>
+                </div>
+              </li>
+              <li class="flex">
+                <span class="text-green-500 mr-4 mt-1"><i class="fa-solid fa-circle-check text-xl"></i></span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white block">True Local Hosting Option</strong>
+                  <span class="text-slate-600 dark:text-slate-400">Unlike foreign providers, we allow full self-hosting
+                    on your VPS to meet strict local data sovereignty laws.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Request Section -->
+    <section id="contact" class="py-20 bg-primary-500 relative overflow-hidden">
+      <!-- Abstract pattern for gold background -->
+      <div class="absolute inset-0 opacity-10"
+        style="background-image: repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(45deg, #000 25%, #fff 25%, #fff 75%, #000 75%, #000); background-position: 0 0, 10px 10px; background-size: 20px 20px;">
+      </div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white dark:bg-navy-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+
+          <!-- Form Info -->
+          <div class="p-8 md:p-12 md:w-5/12 bg-slate-900 dark:bg-navy-800 text-white flex flex-col justify-center">
+            <h2 class="text-3xl font-extrabold mb-4">See Verifow in Action</h2>
+            <p class="text-slate-300 mb-8">
+              Request a personalised demo. Our team will walk you through the platform, answer your compliance
+              questions, and discuss your deployment needs (SaaS or VPS).
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center text-slate-300">
+                <i class="fa-solid fa-envelope w-6 text-primary-500"></i>
+                <a href="mailto:hello@verifow.com" class="hover:text-white transition-colors">hello@verifow.com</a>
+              </div>
+              <div class="flex items-center text-slate-300">
+                <i class="fa-solid fa-location-dot w-6 text-primary-500"></i>
+                <span>Lagos, Nigeria</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Options -->
+          <div class="p-8 md:p-12 md:w-7/12 bg-white dark:bg-navy-900 flex flex-col justify-center">
+            <h3 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">Get in Touch Directly</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+              We skipped the lengthy forms. Reach out directly via email or WhatsApp and our deployment team will
+              respond within minutes.
+            </p>
+
+            <div class="space-y-4">
+              <a href="mailto:hello@verifow.com?subject=Verifow Demo Request"
+                class="w-full flex items-center justify-center py-4 px-6 border border-transparent rounded-xl shadow-md text-lg font-bold text-navy-900 bg-primary-500 hover:bg-primary-400 transition-all hover:-translate-y-1">
+                <i class="fa-solid fa-envelope mr-3 text-xl"></i> Email Us
+              </a>
+
+              <a href="https://wa.me/2348144104926?text=Hello%20Verifow%20team,%20I%20would%20like%20to%20request%20a%20demo."
+                target="_blank" rel="noopener noreferrer"
+                class="w-full flex items-center justify-center py-4 px-6 border-2 border-green-500 rounded-xl shadow-sm text-lg font-bold text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all hover:-translate-y-1">
+                <i class="fa-brands fa-whatsapp mr-3 text-xl"></i> WhatsApp: 0814 410 4926
+              </a>
+            </div>
+
+            <p class="text-xs text-center text-slate-500 dark:text-slate-400 mt-6">
+              Typically responds under 5 minutes
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-navy-900 text-white border-t border-navy-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+        <div class="md:col-span-1">
+          <a href="#" class="mb-6 block">
+            <img src="logo-dark.svg" alt="Verifow Logo"
+              class="h-10 w-auto transition-transform duration-300 hover:scale-105" />
+          </a>
+          <p class="text-sm text-slate-400 mb-4">
+            Automated AML/CFT platform protecting financial institutions with precision, speed, and local data
+            sovereignty.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h4>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="#features" class="hover:text-primary-500 transition-colors">Sanctions Screening</a></li>
+            <li><a href="#features" class="hover:text-primary-500 transition-colors">Transaction Monitoring</a></li>
+            <li><a href="#deployment" class="hover:text-primary-500 transition-colors">Deployment (SaaS & VPS)</a></li>
+            <li><a href="https://docs.verifow.com/introduction" target="_blank" rel="noopener noreferrer"
+                class="hover:text-primary-500 transition-colors">API Documentation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h4>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="#why-verifow" class="hover:text-primary-500 transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-primary-500 transition-colors">Compliance Updates</a></li>
+            <li><a href="#" class="hover:text-primary-500 transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-primary-500 transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="mailto:hello@verifow.com"
+                class="hover:text-primary-500 transition-colors">hello@verifow.com</a>
+            </li>
+            <li><a href="https://wa.me/2348144104926" target="_blank" rel="noopener noreferrer"
+                class="hover:text-primary-500 transition-colors">+234 814 410 4926</a></li>
+            <li class="pt-2">RC Number: 9456753</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-navy-800 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm text-slate-400 text-center md:text-left">
+          &copy; 2026 Verifow Technologies. All rights reserved.
+        </p>
+        <p class="text-sm text-slate-500 mt-2 md:mt-0">
+          Built for the Financial Ecosystem.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle Logic
+    const htmlElement = document.documentElement;
+    const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('mobile-theme-toggle')];
+
+    // Check for saved theme preference or system preference
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      htmlElement.classList.add('dark');
+    } else {
+      htmlElement.classList.remove('dark');
+    }
+
+    // Toggle theme on click
+    themeToggles.forEach(toggle => {
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          htmlElement.classList.toggle('dark');
+          if (htmlElement.classList.contains('dark')) {
+            localStorage.theme = 'dark';
+          } else {
+            localStorage.theme = 'light';
+          }
+        });
+      }
+    });
+
+    // Mobile Menu Logic
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+    });
+
+    // Stat Counter Animation
+    const counterElement = document.getElementById('stat-counter');
+    const targetNumber = 47;
+    const duration = 2000; // 2 seconds
+    const fps = 60;
+    const steps = duration / (1000 / fps);
+    const increment = targetNumber / steps;
+    let currentNumber = 0;
+
+    // Start counter when it comes into view
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        const timer = setInterval(() => {
+          currentNumber += increment;
+          if (currentNumber >= targetNumber) {
+            clearInterval(timer);
+            currentNumber = targetNumber;
+          }
+          counterElement.innerText = Math.round(currentNumber);
+        }, 1000 / fps);
+        observer.disconnect(); // Run only once
+      }
+    });
+
+    observer.observe(counterElement);
+  </script>
+</body>
+
+</html>
