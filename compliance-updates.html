@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compliance Updates | Verifow</title>
+  <link rel="icon" type="image/png" href="fav.png">
+  <meta name="description" content="Stay informed on AML/CFT regulatory changes, CBN circulars, sanctions updates, and compliance best practices for Nigerian financial institutions.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#F0FDFB',
+              100: '#CCFBF2',
+              200: '#99F6E4',
+              300: '#5EEAD4',
+              400: '#2DD4BF',
+              500: '#1CE0BE',
+              600: '#0D9488',
+              700: '#0F766E',
+              800: '#115E59',
+              900: '#134E4A',
+            },
+            dark: {
+              900: '#0B0F1F',
+              800: '#111827',
+              700: '#1A2235',
+              600: '#243049',
+            },
+            gray: {
+              50: '#F8F9FC',
+              100: '#F1F3F9',
+              200: '#E2E6EF',
+              300: '#CBD2E0',
+              400: '#94A3B8',
+              500: '#64748B',
+              600: '#475569',
+              700: '#334155',
+              800: '#1E293B',
+              900: '#0F172A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-padding-top: 80px; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0B0F1F; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+    .glass-nav {
+      background: rgba(11, 15, 31, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1CE0BE 0%, #0D9488 100%);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px -8px rgba(28, 224, 190, 0.5);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .grid-pattern {
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 0%, #1CE0BE 50%, #5EEAD4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .update-card {
+      transition: all 0.3s ease;
+    }
+    .update-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- Navigation -->
+  <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="relative group">
+          <img src="logo-dark.svg" alt="Verifow" class="h-9 w-auto transition-transform duration-300 group-hover:scale-105">
+          <span class="absolute -bottom-1 right-0 text-[9px] font-semibold text-gray-400 tracking-wide uppercase group-hover:text-white transition-colors leading-none">by BrndCore</span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="index.html#products" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Products</a>
+          <a href="index.html#platform" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Platform</a>
+          <a href="index.html#developers" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Developers</a>
+          <a href="index.html#deployment" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Deployment</a>
+          <a href="index.html#contact" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="https://docs.verifow.com/introduction" target="_blank" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Docs</a>
+          <a href="index.html#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold text-white">Request Demo</a>
+        </div>
+
+        <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-dark-800 border-t border-white/5">
+      <div class="px-4 py-6 space-y-4">
+        <a href="index.html#products" class="block text-base font-medium text-gray-300 hover:text-white">Products</a>
+        <a href="index.html#platform" class="block text-base font-medium text-gray-300 hover:text-white">Platform</a>
+        <a href="index.html#developers" class="block text-base font-medium text-gray-300 hover:text-white">Developers</a>
+        <a href="index.html#deployment" class="block text-base font-medium text-gray-300 hover:text-white">Deployment</a>
+        <a href="index.html#contact" class="block text-base font-medium text-gray-300 hover:text-white">Contact</a>
+        <a href="index.html#contact" class="block w-full text-center btn-primary px-6 py-3 rounded-full text-sm font-semibold text-white mt-4">Request Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative bg-dark-900 pt-32 pb-20 overflow-hidden">
+      <div class="absolute inset-0 grid-pattern opacity-50"></div>
+      <div class="shape w-[500px] h-[500px] bg-brand-500/10 top-0 right-0"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <span class="inline-block text-sm font-bold text-brand-500 uppercase tracking-widest mb-4">Stay Informed</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+            Compliance <span class="gradient-text">Updates</span>
+          </h1>
+          <p class="text-lg text-gray-400 leading-relaxed">
+            Regulatory changes, CBN circulars, sanctions list updates, and best practices for AML/CFT compliance in Nigeria and across Africa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Updates Grid -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Filter Tags -->
+        <div class="reveal flex flex-wrap gap-3 mb-16">
+          <span class="px-4 py-2 rounded-full bg-brand-500 text-white text-sm font-semibold">All Updates</span>
+          <span class="px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200 transition-colors cursor-pointer">CBN Circulars</span>
+          <span class="px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200 transition-colors cursor-pointer">Sanctions</span>
+          <span class="px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200 transition-colors cursor-pointer">Product</span>
+          <span class="px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200 transition-colors cursor-pointer">Best Practices</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Update 1 -->
+          <article class="reveal update-card bg-white rounded-3xl border border-gray-100 overflow-hidden">
+            <div class="h-2 bg-red-500"></div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-red-50 text-red-600 text-xs font-bold uppercase tracking-wide">Sanctions</span>
+                <span class="text-gray-400 text-sm">May 28, 2026</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">OFAC Updates SDN List with New Nigerian Entities</h3>
+              <p class="text-gray-500 leading-relaxed mb-6">
+                The U.S. Department of the Treasury's Office of Foreign Assets Control (OFAC) has added four Nigerian entities and seven individuals to the Specially Designated Nationals (SDN) list. All financial institutions are advised to update their sanctions screening databases immediately.
+              </p>
+              <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 gap-2 group">
+                Read more <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Update 2 -->
+          <article class="reveal update-card bg-white rounded-3xl border border-gray-100 overflow-hidden">
+            <div class="h-2 bg-blue-500"></div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wide">CBN Circular</span>
+                <span class="text-gray-400 text-sm">May 15, 2026</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">CBN Releases Revised AML/CFT Supervisory Framework</h3>
+              <p class="text-gray-500 leading-relaxed mb-6">
+                The Central Bank of Nigeria has issued a revised Anti-Money Laundering and Combating the Financing of Terrorism supervisory framework. Key changes include enhanced customer due diligence requirements and new reporting thresholds for cryptocurrency-related transactions.
+              </p>
+              <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 gap-2 group">
+                Read more <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Update 3 -->
+          <article class="reveal update-card bg-white rounded-3xl border border-gray-100 overflow-hidden">
+            <div class="h-2 bg-brand-500"></div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wide">Product</span>
+                <span class="text-gray-400 text-sm">May 10, 2026</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Verifow Expands PEP Coverage to 140+ Countries</h3>
+              <p class="text-gray-500 leading-relaxed mb-6">
+                Our Politically Exposed Persons database has been expanded to include coverage from over 140 countries, with enhanced sub-national coverage for state governors, local government chairpersons, and senior judicial officers across Africa.
+              </p>
+              <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 gap-2 group">
+                Read more <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Update 4 -->
+          <article class="reveal update-card bg-white rounded-3xl border border-gray-100 overflow-hidden">
+            <div class="h-2 bg-purple-500"></div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-600 text-xs font-bold uppercase tracking-wide">Best Practices</span>
+                <span class="text-gray-400 text-sm">April 22, 2026</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Guidance on Enhanced Due Diligence for High-Risk Jurisdictions</h3>
+              <p class="text-gray-500 leading-relaxed mb-6">
+                Following the FATF's updated grey list, we have published guidance on implementing enhanced due diligence for transactions involving high-risk jurisdictions. Includes recommended additional verification steps and documentation requirements.
+              </p>
+              <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 gap-2 group">
+                Read more <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Update 5 -->
+          <article class="reveal update-card bg-white rounded-3xl border border-gray-100 overflow-hidden">
+            <div class="h-2 bg-blue-500"></div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wide">CBN Circular</span>
+                <span class="text-gray-400 text-sm">April 8, 2026</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">New Cash Transaction Reporting Thresholds Effective June 1</h3>
+              <p class="text-gray-500 leading-relaxed mb-6">
+                The CBN has announced revised cash transaction reporting thresholds. Single cash transactions exceeding NGN 5,000,000 for individuals and NGN 10,000,000 for corporate bodies must now be reported within 24 hours via the updated e-Filing portal.
+              </p>
+              <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 gap-2 group">
+                Read more <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Update 6 -->
+          <article class="reveal update-card bg-white rounded-3xl border border-gray-100 overflow-hidden">
+            <div class="h-2 bg-brand-500"></div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wide">Product</span>
+                <span class="text-gray-400 text-sm">March 30, 2026</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">KYB Module Now Supports Real-Time CAC Beneficial Ownership Lookup</h3>
+              <p class="text-gray-500 leading-relaxed mb-6">
+                Verifow's Corporate KYB module now integrates directly with the Corporate Affairs Commission (CAC) beneficial ownership register. Instantly verify directors, shareholders, and ultimate beneficial owners with automatic sanctions cross-checking.
+              </p>
+              <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 gap-2 group">
+                Read more <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Update 7 -->
+          <article class="reveal update-card bg-white rounded-3xl border border-gray-100 overflow-hidden">
+            <div class="h-2 bg-red-500"></div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-red-50 text-red-600 text-xs font-bold uppercase tracking-wide">Sanctions</span>
+                <span class="text-gray-400 text-sm">March 12, 2026</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">UK HMT Updates Consolidated List with West African Targets</h3>
+              <p class="text-gray-500 leading-relaxed mb-6">
+                HM Treasury has updated its consolidated list of financial sanctions targets, adding several West African entities linked to illicit gold trading networks. Financial institutions with exposure to precious metals trading should review their customer bases.
+              </p>
+              <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 gap-2 group">
+                Read more <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Update 8 -->
+          <article class="reveal update-card bg-white rounded-3xl border border-gray-100 overflow-hidden">
+            <div class="h-2 bg-purple-500"></div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-600 text-xs font-bold uppercase tracking-wide">Best Practices</span>
+                <span class="text-gray-400 text-sm">February 28, 2026</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">NFIU Publishes 2026 Suspicious Transaction Indicators</h3>
+              <p class="text-gray-500 leading-relaxed mb-6">
+                The Nigerian Financial Intelligence Unit has released its annual report on suspicious transaction indicators. Top red flags include rapid movement of funds through multiple accounts, structuring below reporting thresholds, and use of shell companies for real estate purchases.
+              </p>
+              <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 gap-2 group">
+                Read more <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Update 9 -->
+          <article class="reveal update-card bg-white rounded-3xl border border-gray-100 overflow-hidden">
+            <div class="h-2 bg-brand-500"></div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wide">Product</span>
+                <span class="text-gray-400 text-sm">February 15, 2026</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Custom Rule Engine Adds Support for Geographic Risk Scoring</h3>
+              <p class="text-gray-500 leading-relaxed mb-6">
+                You can now build custom rules that factor in geographic risk scores. Automatically flag transactions originating from or destined to high-risk regions, with configurable thresholds and alert severity levels.
+              </p>
+              <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 gap-2 group">
+                Read more <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pagination -->
+        <div class="reveal flex items-center justify-center gap-2 mt-16">
+          <button class="w-10 h-10 rounded-full bg-brand-500 text-white font-semibold text-sm">1</button>
+          <button class="w-10 h-10 rounded-full bg-gray-100 text-gray-600 font-semibold text-sm hover:bg-gray-200 transition-colors">2</button>
+          <button class="w-10 h-10 rounded-full bg-gray-100 text-gray-600 font-semibold text-sm hover:bg-gray-200 transition-colors">3</button>
+          <span class="text-gray-400 px-2">...</span>
+          <button class="w-10 h-10 rounded-full bg-gray-100 text-gray-600 font-semibold text-sm hover:bg-gray-200 transition-colors">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="py-24 lg:py-32 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="reveal">
+          <div class="w-16 h-16 rounded-2xl bg-brand-50 flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-envelope-open-text text-3xl text-brand-500"></i>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">
+            Never miss a compliance update
+          </h2>
+          <p class="text-lg text-gray-500 mb-10 max-w-xl mx-auto">
+            Get the latest CBN circulars, sanctions list changes, and AML best practices delivered straight to your inbox.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+            <input type="email" placeholder="Enter your email" required class="flex-1 px-5 py-3.5 rounded-full border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+            <button type="submit" class="btn-primary px-8 py-3.5 rounded-full text-sm font-bold text-white whitespace-nowrap">
+              Subscribe
+            </button>
+          </form>
+          <p class="text-xs text-gray-400 mt-4">No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-white/5 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="lg:col-span-1">
+          <img src="logo-dark.svg" alt="Verifow" class="h-10 w-auto mb-6">
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Automated AML/CFT compliance platform protecting financial institutions across Africa with precision, speed, and local data sovereignty.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6">Platform</h4>
+          <ul class="space-y-4">
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Sanctions Screening</a></li>
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Transaction Monitoring</a></li>
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">KYC & KYB</a></li>
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Custom Rules</a></li>
+            <li><a href="index.html#deployment" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Deployment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6">Company</h4>
+          <ul class="space-y-4">
+            <li><a href="about.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">About Us</a></li>
+            <li><a href="compliance-updates.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Compliance Updates</a></li>
+            <li><a href="privacy-policy.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6">Contact</h4>
+          <ul class="space-y-4">
+            <li>
+              <a href="mailto:hello@verifow.com" class="text-gray-400 hover:text-brand-500 transition-colors text-sm flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-xs"></i> hello@verifow.com
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/2348144104926" target="_blank" class="text-gray-400 hover:text-brand-500 transition-colors text-sm flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-xs"></i> +234 814 410 4926
+              </a>
+            </li>
+            <li class="text-gray-400 text-sm flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-xs"></i> Lagos, Nigeria
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-500 text-sm">&copy; 2026 Verifow Technologies. All rights reserved.</p>
+        <p class="text-gray-600 text-sm">Built for the African Financial Ecosystem.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 50) {
+        navbar.classList.add('shadow-lg');
+      } else {
+        navbar.classList.remove('shadow-lg');
+      }
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

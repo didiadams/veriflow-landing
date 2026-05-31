@@ -339,13 +339,12 @@
     </section>
 
     <!-- Trust Bar -->
-    <section class="bg-gray-50 py-16 border-y border-gray-200">
+    <!--<section class="bg-gray-50 py-16 border-y border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-10">
           Trusted by regulated financial institutions
         </p>
         <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          <!-- Using text-based placeholders styled as logos since we don't have actual partner logos -->
           <div class="flex items-center gap-2 text-xl font-bold text-gray-700">
             <i class="fa-solid fa-building-columns"></i> Sterling Bank
           </div>
@@ -366,7 +365,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
 
     <!-- Products Section -->
     <section id="products" class="py-24 lg:py-32 bg-white">
@@ -488,7 +487,7 @@
                   <i class="fa-solid fa-bolt"></i>
                 </div>
                 <div>
-                  <h4 class="text-lg font-bold text-gray-900 mb-1">Sub-100ms Pipeline</h4>
+                  <h4 class="text-lg font-bold text-gray-900 mb-1">Sub-200ms Pipeline</h4>
                   <p class="text-gray-500">Sanctions, rules, and behavioral scoring, all resolved before your user notices a delay.</p>
                 </div>
               </div>
@@ -554,7 +553,7 @@
                       <div class="text-xs text-gray-500 mt-1">Rules Active</div>
                     </div>
                     <div class="bg-gray-50 p-4 rounded-xl text-center">
-                      <div class="text-2xl font-black text-gray-900">12ms</div>
+                      <div class="text-2xl font-black text-gray-900">180ms</div>
                       <div class="text-xs text-gray-500 mt-1">Avg. Latency</div>
                     </div>
                     <div class="bg-gray-50 p-4 rounded-xl text-center">
@@ -578,7 +577,7 @@
             How it <span class="text-brand-500">works</span>
           </h2>
           <p class="text-lg text-gray-500">
-            Four stages. Under 100 milliseconds. Every transaction screened, scored, and stored with complete transparency.
+            Four stages. Under 200 milliseconds. Every transaction screened, scored, and stored with complete transparency.
           </p>
         </div>
 
@@ -652,7 +651,7 @@
 
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div class="reveal text-center">
-            <div class="text-5xl lg:text-6xl font-black text-white mb-2"><span class="stat-number" data-target="100">0</span>ms</div>
+            <div class="text-5xl lg:text-6xl font-black text-white mb-2"><span class="stat-number" data-target="200">0</span>ms</div>
             <div class="text-gray-400 text-sm font-medium">Pipeline latency (p95)</div>
           </div>
           <div class="reveal text-center">
@@ -695,7 +694,7 @@
   }
 });
 
-<span class="text-gray-500">// Response in ~180ms</span>
+<span class="text-gray-500">// Response in ~200ms</span>
 <span class="text-purple-400">if</span> (screening.<span class="text-blue-400">verdict</span> === <span class="text-green-400">"BLOCK"</span>) {
   <span class="text-purple-400">await</span> <span class="text-yellow-400">alert</span>.<span class="text-blue-400">compliance</span>(screening);
 }</code></pre>
@@ -837,7 +836,7 @@
             <div class="flex items-center gap-2">
               <i class="fa-solid fa-envelope text-brand-500"></i>
               hello@verifow.com
-            </div>
+            </div> 
             <div class="flex items-center gap-2">
               <i class="fa-solid fa-phone text-brand-500"></i>
               +234 814 410 4926
@@ -887,10 +886,10 @@
         <div>
           <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6">Company</h4>
           <ul class="space-y-4">
-            <li><a href="#" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">About Us</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Compliance Updates</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Privacy Policy</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Terms of Service</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">About Us</a></li>
+            <li><a href="compliance-updates.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Compliance Updates</a></li>
+            <li><a href="privacy-policy.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Terms of Service</a></li>
           </ul>
         </div>
 
@@ -898,11 +897,11 @@
         <div>
           <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6">Contact</h4>
           <ul class="space-y-4">
-            <li>
+             <li>
               <a href="mailto:hello@verifow.com" class="text-gray-400 hover:text-brand-500 transition-colors text-sm flex items-center gap-2">
                 <i class="fa-solid fa-envelope text-xs"></i> hello@verifow.com
               </a>
-            </li>
+            </li> 
             <li>
               <a href="https://wa.me/2348144104926" target="_blank" class="text-gray-400 hover:text-brand-500 transition-colors text-sm flex items-center gap-2">
                 <i class="fa-brands fa-whatsapp text-xs"></i> +234 814 410 4926
@@ -911,7 +910,7 @@
             <li class="text-gray-400 text-sm flex items-center gap-2">
               <i class="fa-solid fa-location-dot text-xs"></i> Lagos, Nigeria
             </li>
-            <li class="text-gray-500 text-xs pt-2">RC Number: 9456753</li>
+            <!-- <li class="text-gray-500 text-xs pt-2">RC Number: 9456753</li> -->
           </ul>
         </div>
       </div>

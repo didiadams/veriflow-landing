@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service | Verifow</title>
+  <link rel="icon" type="image/png" href="fav.png">
+  <meta name="description" content="Verifow Terms of Service - The terms governing your use of our AML compliance platform and services.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#F0FDFB',
+              100: '#CCFBF2',
+              200: '#99F6E4',
+              300: '#5EEAD4',
+              400: '#2DD4BF',
+              500: '#1CE0BE',
+              600: '#0D9488',
+              700: '#0F766E',
+              800: '#115E59',
+              900: '#134E4A',
+            },
+            dark: {
+              900: '#0B0F1F',
+              800: '#111827',
+              700: '#1A2235',
+              600: '#243049',
+            },
+            gray: {
+              50: '#F8F9FC',
+              100: '#F1F3F9',
+              200: '#E2E6EF',
+              300: '#CBD2E0',
+              400: '#94A3B8',
+              500: '#64748B',
+              600: '#475569',
+              700: '#334155',
+              800: '#1E293B',
+              900: '#0F172A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-padding-top: 80px; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0B0F1F; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+    .glass-nav {
+      background: rgba(11, 15, 31, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1CE0BE 0%, #0D9488 100%);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px -8px rgba(28, 224, 190, 0.5);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .grid-pattern {
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .legal-content h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .legal-content h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #1E293B;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .legal-content p {
+      color: #475569;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .legal-content ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: #475569;
+    }
+    .legal-content ul li {
+      margin-bottom: 0.5rem;
+      line-height: 1.75;
+    }
+    .legal-content a {
+      color: #0D9488;
+      text-decoration: underline;
+    }
+    .legal-content a:hover {
+      color: #115E59;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- Navigation -->
+  <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="relative group">
+          <img src="logo-dark.svg" alt="Verifow" class="h-9 w-auto transition-transform duration-300 group-hover:scale-105">
+          <span class="absolute -bottom-1 right-0 text-[9px] font-semibold text-gray-400 tracking-wide uppercase group-hover:text-white transition-colors leading-none">by BrndCore</span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="index.html#products" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Products</a>
+          <a href="index.html#platform" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Platform</a>
+          <a href="index.html#developers" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Developers</a>
+          <a href="index.html#deployment" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Deployment</a>
+          <a href="index.html#contact" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="https://docs.verifow.com/introduction" target="_blank" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Docs</a>
+          <a href="index.html#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold text-white">Request Demo</a>
+        </div>
+
+        <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-dark-800 border-t border-white/5">
+      <div class="px-4 py-6 space-y-4">
+        <a href="index.html#products" class="block text-base font-medium text-gray-300 hover:text-white">Products</a>
+        <a href="index.html#platform" class="block text-base font-medium text-gray-300 hover:text-white">Platform</a>
+        <a href="index.html#developers" class="block text-base font-medium text-gray-300 hover:text-white">Developers</a>
+        <a href="index.html#deployment" class="block text-base font-medium text-gray-300 hover:text-white">Deployment</a>
+        <a href="index.html#contact" class="block text-base font-medium text-gray-300 hover:text-white">Contact</a>
+        <a href="index.html#contact" class="block w-full text-center btn-primary px-6 py-3 rounded-full text-sm font-semibold text-white mt-4">Request Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative bg-dark-900 pt-32 pb-20 overflow-hidden">
+      <div class="absolute inset-0 grid-pattern opacity-50"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+            Terms of Service
+          </h1>
+          <p class="text-lg text-gray-400 leading-relaxed">
+            Last updated: May 31, 2026. These Terms of Service govern your access to and use of the Verifow platform and related services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="legal-content">
+          <p>
+            These Terms of Service ("Terms") constitute a legally binding agreement between you and Verifow Technologies ("Verifow," "we," "us," or "our") governing your access to and use of the Verifow website, applications, APIs, and other services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms. If you do not agree to these Terms, you may not access or use the Services.
+          </p>
+
+          <h2>1. Definitions</h2>
+          <p>Throughout these Terms, the following definitions apply:</p>
+          <ul>
+            <li><strong>"Account"</strong> means the registered account you create to access the Services.</li>
+            <li><strong>"Customer Data"</strong> means any data, information, or material submitted by you or on your behalf to the Services, including personal data of your end customers.</li>
+            <li><strong>"Platform"</strong> means the Verifow AML compliance, KYC verification, and sanctions screening software and infrastructure.</li>
+            <li><strong>"Subscription"</strong> means the commercial arrangement under which we provide you access to the Services.</li>
+            <li><strong>"User"</strong> means any individual authorized by you to access and use the Services under your Account.</li>
+          </ul>
+
+          <h2>2. Eligibility and Account Registration</h2>
+          <p>
+            To use our Services, you must be at least 18 years old and capable of forming a binding contract. You represent and warrant that:
+          </p>
+          <ul>
+            <li>You are a legally recognized financial institution, fintech, lender, or other regulated entity, or an authorized representative thereof</li>
+            <li>All registration information you submit is accurate, current, and complete</li>
+            <li>You will maintain the accuracy of such information and promptly update it as necessary</li>
+            <li>You have the authority to bind your organization to these Terms</li>
+          </ul>
+          <p>
+            We reserve the right to suspend or terminate your Account if any information provided is found to be inaccurate, false, or misleading.
+          </p>
+
+          <h2>3. Subscription and Payment</h2>
+          <h3>3.1 Fees</h3>
+          <p>
+            Access to certain features of the Services requires payment of fees as specified in your Order Form or subscription plan. All fees are quoted in Nigerian Naira (NGN) unless otherwise stated and are exclusive of applicable taxes.
+          </p>
+
+          <h3>3.2 Billing and Payment Terms</h3>
+          <ul>
+            <li>Fees are billed in advance on a monthly or annual basis, depending on your selected plan</li>
+            <li>Payment is due within 14 days of the invoice date</li>
+            <li>Late payments may incur interest at 1.5% per month or the maximum rate permitted by law</li>
+            <li>We reserve the right to suspend Services for overdue accounts after providing 7 days' written notice</li>
+          </ul>
+
+          <h3>3.3 Cancellation and Refunds</h3>
+          <p>
+            You may cancel your Subscription at any time. Cancellations take effect at the end of the current billing period. No refunds will be provided for partial months or unused features.
+          </p>
+
+          <h2>4. Use of Services</h2>
+          <h3>4.1 Permitted Use</h3>
+          <p>
+            Subject to these Terms and payment of applicable fees, we grant you a limited, non-exclusive, non-transferable, revocable license to access and use the Services solely for your internal compliance, risk management, and regulatory reporting purposes.
+          </p>
+
+          <h3>4.2 Prohibited Use</h3>
+          <p>You agree not to, and not to permit any third party to:</p>
+          <ul>
+            <li>Use the Services for any unlawful purpose or in violation of any applicable law or regulation, including AML/CFT laws</li>
+            <li>Reverse engineer, decompile, disassemble, or attempt to discover the source code of the Platform</li>
+            <li>Access or use the Services to build a competitive product or service</li>
+            <li>Interfere with or disrupt the integrity or performance of the Services</li>
+            <li>Circumvent any access or usage restrictions</li>
+            <li>Use the Services to process data on behalf of third parties without our prior written consent</li>
+            <li>Submit false, fraudulent, or misleading information to the Platform</li>
+          </ul>
+
+          <h2>5. Customer Data and Privacy</h2>
+          <h3>5.1 Data Ownership</h3>
+          <p>
+            You retain all rights, title, and interest in and to your Customer Data. We do not claim ownership of your Customer Data.
+          </p>
+
+          <h3>5.2 Data Processing</h3>
+          <p>
+            You grant us a limited license to access, process, and store Customer Data solely to provide, maintain, and improve the Services. We will handle Customer Data in accordance with our <a href="privacy-policy.html">Privacy Policy</a> and any applicable Data Processing Agreement.
+          </p>
+
+          <h3>5.3 Your Responsibilities</h3>
+          <p>You are solely responsible for:</p>
+          <ul>
+            <li>The accuracy, quality, and legality of Customer Data</li>
+            <li>Obtaining all necessary consents and authorizations to submit Customer Data to the Services</li>
+            <li>Ensuring your use of the Services complies with all applicable data protection laws, including the Nigeria Data Protection Act 2023</li>
+            <li>Maintaining backup copies of your Customer Data</li>
+          </ul>
+
+          <h2>6. Intellectual Property</h2>
+          <p>
+            All intellectual property rights in and to the Services, including the Platform, software, algorithms, databases, documentation, and trademarks, are owned by or licensed to Verifow. Nothing in these Terms grants you any right, title, or interest in our intellectual property except for the limited license expressly set forth herein.
+          </p>
+
+          <h2>7. Confidentiality</h2>
+          <p>
+            Each party agrees to maintain the confidentiality of all proprietary or confidential information disclosed by the other party ("Confidential Information"). Confidential Information does not include information that: (a) is or becomes publicly available through no breach of these Terms; (b) was rightfully known prior to disclosure; or (c) is required to be disclosed by law or regulatory authority.
+          </p>
+
+          <h2>8. Service Level and Support</h2>
+          <p>
+            We use commercially reasonable efforts to make the Services available 99.9% of the time, excluding scheduled maintenance and circumstances beyond our reasonable control. Support is provided via email and WhatsApp during business hours (9:00 AM - 6:00 PM WAT, Monday - Friday).
+          </p>
+
+          <h2>9. Term and Termination</h2>
+          <h3>9.1 Term</h3>
+          <p>
+            These Terms commence on the date you first access the Services and continue until terminated in accordance with this section.
+          </p>
+
+          <h3>9.2 Termination for Convenience</h3>
+          <p>
+            Either party may terminate these Terms by providing 30 days' written notice to the other party.
+          </p>
+
+          <h3>9.3 Termination for Cause</h3>
+          <p>
+            Either party may terminate these Terms immediately upon written notice if the other party: (a) materially breaches these Terms and fails to cure such breach within 14 days; (b) becomes insolvent or files for bankruptcy; or (c) engages in fraudulent or illegal activity.
+          </p>
+
+          <h3>9.4 Effect of Termination</h3>
+          <p>
+            Upon termination, your right to access the Services ceases immediately. We will retain Customer Data in accordance with our data retention policies and applicable legal requirements. You may request export of your data within 30 days of termination.
+          </p>
+
+          <h2>10. Warranties and Disclaimers</h2>
+          <h3>10.1 Our Warranties</h3>
+          <p>
+            We warrant that: (a) the Services will materially conform to the documentation provided; (b) we will perform services in a professional and workmanlike manner; and (c) the Services will not contain malicious code.
+          </p>
+
+          <h3>10.2 Disclaimers</h3>
+          <p>
+            EXCEPT AS EXPRESSLY PROVIDED HEREIN, THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, OR COMPLETELY SECURE. WE DO NOT GUARANTEE THAT SANCTIONS SCREENING OR COMPLIANCE CHECKS WILL IDENTIFY ALL RISKS OR SUSPICIOUS ACTIVITIES. YOU ACKNOWLEDGE THAT COMPLIANCE IS A SHARED RESPONSIBILITY AND THAT OUR SERVICES ARE TOOLS TO ASSIST, NOT REPLACE, YOUR COMPLIANCE PROGRAM.
+          </p>
+
+          <h2>11. Limitation of Liability</h2>
+          <p>
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL VERIFOW BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, DATA, OR BUSINESS OPPORTUNITIES, ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE SERVICES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+          </p>
+          <p>
+            OUR TOTAL CUMULATIVE LIABILITY ARISING OUT OF OR RELATED TO THESE TERMS SHALL NOT EXCEED THE TOTAL AMOUNT PAID BY YOU TO VERIFOW IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY.
+          </p>
+
+          <h2>12. Indemnification</h2>
+          <p>
+            You agree to indemnify, defend, and hold harmless Verifow and its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses (including reasonable legal fees) arising out of or in connection with: (a) your use of the Services; (b) your Customer Data; (c) your violation of these Terms; or (d) your violation of any third-party right, including intellectual property or privacy rights.
+          </p>
+
+          <h2>13. Governing Law and Dispute Resolution</h2>
+          <p>
+            These Terms shall be governed by and construed in accordance with the laws of the Federal Republic of Nigeria. Any dispute arising out of or in connection with these Terms shall first be subject to good-faith negotiations between the parties. If unresolved within 30 days, the dispute shall be finally settled by arbitration in Lagos, Nigeria, in accordance with the Arbitration and Conciliation Act (Cap A18, Laws of the Federation of Nigeria, 2004).
+          </p>
+
+          <h2>14. Force Majeure</h2>
+          <p>
+            Neither party shall be liable for any failure or delay in performing its obligations under these Terms due to causes beyond its reasonable control, including acts of God, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, strikes, or shortages of transportation, facilities, fuel, energy, labor, or materials.
+          </p>
+
+          <h2>15. Modifications to Terms</h2>
+          <p>
+            We reserve the right to modify these Terms at any time. We will provide notice of material changes by posting the updated Terms on our website and updating the "Last updated" date. Your continued use of the Services after such changes constitutes acceptance of the revised Terms.
+          </p>
+
+          <h2>16. General Provisions</h2>
+          <ul>
+            <li><strong>Entire Agreement:</strong> These Terms, together with the Privacy Policy and any Order Forms, constitute the entire agreement between you and Verifow.</li>
+            <li><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable, the remaining provisions shall remain in full force and effect.</li>
+            <li><strong>Waiver:</strong> No waiver of any provision shall be effective unless in writing and signed by the waiving party.</li>
+            <li><strong>Assignment:</strong> You may not assign these Terms without our prior written consent. We may assign these Terms in connection with a merger, acquisition, or sale of assets.</li>
+            <li><strong>Notices:</strong> All notices shall be in writing and delivered to the addresses specified by the parties.</li>
+          </ul>
+
+          <h2>17. Contact Information</h2>
+          <p>
+            If you have any questions about these Terms, please contact us:
+          </p>
+          <ul>
+            <li>Email: <a href="mailto:legal@verifow.com">legal@verifow.com</a></li>
+            <li>Address: Lagos, Nigeria</li>
+            <li>Phone: +234 814 410 4926</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-white/5 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="lg:col-span-1">
+          <img src="logo-dark.svg" alt="Verifow" class="h-10 w-auto mb-6">
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Automated AML/CFT compliance platform protecting financial institutions across Africa with precision, speed, and local data sovereignty.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6">Platform</h4>
+          <ul class="space-y-4">
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Sanctions Screening</a></li>
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Transaction Monitoring</a></li>
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">KYC & KYB</a></li>
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Custom Rules</a></li>
+            <li><a href="index.html#deployment" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Deployment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6">Company</h4>
+          <ul class="space-y-4">
+            <li><a href="about.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">About Us</a></li>
+            <li><a href="compliance-updates.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Compliance Updates</a></li>
+            <li><a href="privacy-policy.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6">Contact</h4>
+          <ul class="space-y-4">
+            <li>
+              <a href="mailto:hello@verifow.com" class="text-gray-400 hover:text-brand-500 transition-colors text-sm flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-xs"></i> hello@verifow.com
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/2348144104926" target="_blank" class="text-gray-400 hover:text-brand-500 transition-colors text-sm flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-xs"></i> +234 814 410 4926
+              </a>
+            </li>
+            <li class="text-gray-400 text-sm flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-xs"></i> Lagos, Nigeria
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-500 text-sm">&copy; 2026 Verifow Technologies. All rights reserved.</p>
+        <p class="text-gray-600 text-sm">Built for the African Financial Ecosystem.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 50) {
+        navbar.classList.add('shadow-lg');
+      } else {
+        navbar.classList.remove('shadow-lg');
+      }
+    });
+  </script>
+</body>
+</html>

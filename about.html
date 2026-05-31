@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Verifow</title>
+  <link rel="icon" type="image/png" href="fav.png">
+  <meta name="description" content="Learn about Verifow and BrndCore - building the future of AML compliance for Africa.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#F0FDFB',
+              100: '#CCFBF2',
+              200: '#99F6E4',
+              300: '#5EEAD4',
+              400: '#2DD4BF',
+              500: '#1CE0BE',
+              600: '#0D9488',
+              700: '#0F766E',
+              800: '#115E59',
+              900: '#134E4A',
+            },
+            dark: {
+              900: '#0B0F1F',
+              800: '#111827',
+              700: '#1A2235',
+              600: '#243049',
+            },
+            gray: {
+              50: '#F8F9FC',
+              100: '#F1F3F9',
+              200: '#E2E6EF',
+              300: '#CBD2E0',
+              400: '#94A3B8',
+              500: '#64748B',
+              600: '#475569',
+              700: '#334155',
+              800: '#1E293B',
+              900: '#0F172A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-padding-top: 80px; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0B0F1F; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+    .glass-nav {
+      background: rgba(11, 15, 31, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1CE0BE 0%, #0D9488 100%);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px -8px rgba(28, 224, 190, 0.5);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .grid-pattern {
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 0%, #1CE0BE 50%, #5EEAD4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- Navigation -->
+  <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="relative group">
+          <img src="logo-dark.svg" alt="Verifow" class="h-9 w-auto transition-transform duration-300 group-hover:scale-105">
+          <span class="absolute -bottom-1 right-0 text-[9px] font-semibold text-gray-400 tracking-wide uppercase group-hover:text-white transition-colors leading-none">by BrndCore</span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="index.html#products" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Products</a>
+          <a href="index.html#platform" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Platform</a>
+          <a href="index.html#developers" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Developers</a>
+          <a href="index.html#deployment" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Deployment</a>
+          <a href="index.html#contact" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="https://docs.verifow.com/introduction" target="_blank" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Docs</a>
+          <a href="index.html#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold text-white">Request Demo</a>
+        </div>
+
+        <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-dark-800 border-t border-white/5">
+      <div class="px-4 py-6 space-y-4">
+        <a href="index.html#products" class="block text-base font-medium text-gray-300 hover:text-white">Products</a>
+        <a href="index.html#platform" class="block text-base font-medium text-gray-300 hover:text-white">Platform</a>
+        <a href="index.html#developers" class="block text-base font-medium text-gray-300 hover:text-white">Developers</a>
+        <a href="index.html#deployment" class="block text-base font-medium text-gray-300 hover:text-white">Deployment</a>
+        <a href="index.html#contact" class="block text-base font-medium text-gray-300 hover:text-white">Contact</a>
+        <a href="index.html#contact" class="block w-full text-center btn-primary px-6 py-3 rounded-full text-sm font-semibold text-white mt-4">Request Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative min-h-[60vh] flex items-center bg-dark-900 overflow-hidden pt-20">
+      <div class="absolute inset-0 grid-pattern opacity-50"></div>
+      <div class="shape w-[500px] h-[500px] bg-brand-500/10 top-0 right-0"></div>
+      <div class="shape w-[400px] h-[400px] bg-brand-500/10 bottom-0 left-0" style="animation-delay: -3s;"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="max-w-3xl">
+          <span class="inline-block text-sm font-bold text-brand-500 uppercase tracking-widest mb-4">About Verifow</span>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[0.95] mb-8">
+            Compliance built for <span class="gradient-text">Africa</span>
+          </h1>
+          <p class="text-xl text-gray-400 leading-relaxed max-w-2xl">
+            Verifow is an automated AML/CFT compliance platform designed specifically for banks, fintechs, and lenders operating across Africa. Born from a need for faster, more accurate, and locally deployable compliance infrastructure.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="reveal">
+            <span class="text-sm font-bold text-brand-500 uppercase tracking-widest">Our Story</span>
+            <h2 class="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mt-4 mb-6">
+              Why we built <span class="text-brand-500">Verifow</span>
+            </h2>
+            <div class="space-y-6 text-gray-500 text-lg leading-relaxed">
+              <p>
+                Financial institutions in Africa face a unique compliance challenge. Global AML tools are expensive, slow, and built for markets with entirely different regulatory frameworks. Local alternatives are fragmented, requiring banks to stitch together multiple vendors for sanctions screening, KYC verification, and regulatory reporting.
+              </p>
+              <p>
+                We built Verifow to solve this. A single platform that handles sanctions screening against UN, OFAC, UK HMT, Interpol, and PEP lists; automated CBN rule enforcement; BVN and NIN verification; and the generation of CTR, SAR, and FTR reports, all in under 200 milliseconds per transaction.
+              </p>
+              <p>
+                Whether you are a tier-1 bank processing millions of transactions daily or a fast-growing fintech launching your first product, Verifow scales with you. Deploy in the cloud for speed, or on-premise for complete data sovereignty.
+              </p>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="relative">
+              <div class="absolute -inset-4 bg-gradient-to-r from-brand-500/20 to-purple-500/20 rounded-[2rem] blur-2xl"></div>
+              <div class="relative bg-gray-50 rounded-3xl p-10 border border-gray-100">
+                <div class="grid grid-cols-2 gap-8">
+                  <div class="text-center">
+                    <div class="text-4xl font-black text-brand-500 mb-2">200ms</div>
+                    <div class="text-sm text-gray-500">Pipeline Latency</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-4xl font-black text-brand-500 mb-2">99.9%</div>
+                    <div class="text-sm text-gray-500">Platform Uptime</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-4xl font-black text-brand-500 mb-2">100+</div>
+                    <div class="text-sm text-gray-500">Countries in PEP Lists</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-4xl font-black text-brand-500 mb-2">47</div>
+                    <div class="text-sm text-gray-500">CBN Rules Pre-loaded</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BrndCore Section -->
+    <section class="py-24 lg:py-32 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center max-w-3xl mx-auto mb-20">
+          <span class="text-sm font-bold text-brand-500 uppercase tracking-widest">Our Parent Company</span>
+          <h2 class="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mt-4 mb-6">
+            A product of <span class="text-brand-500">BrndCore</span>
+          </h2>
+          <p class="text-lg text-gray-500 leading-relaxed">
+            Verifow is developed and maintained by BrndCore, a technology company committed to building critical infrastructure for the African financial ecosystem.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="reveal bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center mb-6">
+              <i class="fa-solid fa-bullseye text-2xl text-brand-500"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Our Mission</h3>
+            <p class="text-gray-500 leading-relaxed">
+              To make AML compliance accessible, fast, and reliable for every financial institution in Africa, regardless of size or technical maturity.
+            </p>
+          </div>
+
+          <div class="reveal bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
+              <i class="fa-solid fa-eye text-2xl text-blue-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
+            <p class="text-gray-500 leading-relaxed">
+              An African financial system where compliance is not a bottleneck, but a competitive advantage. Where every transaction is screened with world-class accuracy at local speed.
+            </p>
+          </div>
+
+          <div class="reveal bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center mb-6">
+              <i class="fa-solid fa-handshake text-2xl text-purple-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Our Values</h3>
+            <p class="text-gray-500 leading-relaxed">
+              Precision in detection. Speed in execution. Sovereignty in deployment. We believe African financial data should stay in Africa, processed by platforms built for African regulators.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Sets Us Apart -->
+    <section class="py-24 lg:py-32 bg-dark-900 relative overflow-hidden">
+      <div class="absolute inset-0 grid-pattern opacity-30"></div>
+      <div class="shape w-[500px] h-[500px] bg-brand-500/10 top-0 right-0"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center max-w-3xl mx-auto mb-20">
+          <h2 class="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-6">
+            What sets us <span class="text-brand-500">apart</span>
+          </h2>
+          <p class="text-lg text-gray-400">
+            We are not just another compliance vendor. We are building the compliance infrastructure Africa's financial system deserves.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="reveal flex gap-5">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-500 flex items-center justify-center text-white font-bold text-lg">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white mb-2">Sub-200ms Pipeline</h4>
+              <p class="text-gray-400 leading-relaxed">Sanctions screening, CBN rule checking, and behavioral analysis, all completed before your user notices a delay.</p>
+            </div>
+          </div>
+
+          <div class="reveal flex gap-5">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white font-bold text-lg">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white mb-2">Local Deployment</h4>
+              <p class="text-gray-400 leading-relaxed">Deploy on-premise or in a Nigerian data centre. Your customer data never leaves the jurisdiction.</p>
+            </div>
+          </div>
+
+          <div class="reveal flex gap-5">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white font-bold text-lg">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white mb-2">CBN-Ready Reporting</h4>
+              <p class="text-gray-400 leading-relaxed">Auto-generated CTR, SAR, and FTR reports in formats ready for submission to Nigerian regulators.</p>
+            </div>
+          </div>
+
+          <div class="reveal flex gap-5">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white font-bold text-lg">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white mb-2">Fail-Open Reliability</h4>
+              <p class="text-gray-400 leading-relaxed">If our screening engine is temporarily unavailable, transactions proceed and are logged. Your business never stops.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team / CTA -->
+    <section id="contact" class="py-24 lg:py-32 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="reveal">
+          <h2 class="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6">
+            Built in Lagos, for <span class="text-brand-500">Africa</span>
+          </h2>
+          <p class="text-lg text-gray-500 leading-relaxed mb-12 max-w-2xl mx-auto">
+            Verifow is designed, developed, and supported by a team based in Lagos, Nigeria. We understand the local regulatory landscape because we operate within it every day.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <a href="mailto:hello@verifow.com?subject=Verifow Demo Request" class="btn-primary w-full sm:w-auto px-10 py-4 rounded-full text-base font-bold text-white flex items-center justify-center gap-2">
+              <i class="fa-solid fa-envelope"></i>
+              Email Us
+            </a>
+            <a href="https://wa.me/2348144104926?text=Hello%20Verifow%20team,%20I%20would%20like%20to%20request%20a%20demo." target="_blank" class="btn-secondary w-full sm:w-auto px-10 py-4 rounded-full text-base font-bold text-white flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-green-400"></i>
+              WhatsApp
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-sm text-gray-500">
+            <div class="flex flex-col items-center gap-2">
+              <i class="fa-solid fa-location-dot text-brand-500 text-xl"></i>
+              <span>Lagos, Nigeria</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <i class="fa-solid fa-envelope text-brand-500 text-xl"></i>
+              <a href="mailto:hello@verifow.com" class="hover:text-brand-500 transition-colors">hello@verifow.com</a>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <i class="fa-solid fa-phone text-brand-500 text-xl"></i>
+              <a href="tel:+2348144104926" class="hover:text-brand-500 transition-colors">+234 814 410 4926</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-white/5 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="lg:col-span-1">
+          <img src="logo-dark.svg" alt="Verifow" class="h-10 w-auto mb-6">
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Automated AML/CFT compliance platform protecting financial institutions across Africa with precision, speed, and local data sovereignty.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6">Platform</h4>
+          <ul class="space-y-4">
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Sanctions Screening</a></li>
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Transaction Monitoring</a></li>
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">KYC & KYB</a></li>
+            <li><a href="index.html#products" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Custom Rules</a></li>
+            <li><a href="index.html#deployment" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Deployment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6">Company</h4>
+          <ul class="space-y-4">
+            <li><a href="about.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">About Us</a></li>
+            <li><a href="compliance-updates.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Compliance Updates</a></li>
+            <li><a href="privacy-policy.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" class="text-gray-400 hover:text-brand-500 transition-colors text-sm">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6">Contact</h4>
+          <ul class="space-y-4">
+            <li>
+              <a href="mailto:hello@verifow.com" class="text-gray-400 hover:text-brand-500 transition-colors text-sm flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-xs"></i> hello@verifow.com
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/2348144104926" target="_blank" class="text-gray-400 hover:text-brand-500 transition-colors text-sm flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-xs"></i> +234 814 410 4926
+              </a>
+            </li>
+            <li class="text-gray-400 text-sm flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-xs"></i> Lagos, Nigeria
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-500 text-sm">&copy; 2026 Verifow Technologies. All rights reserved.</p>
+        <p class="text-gray-600 text-sm">Built for the African Financial Ecosystem.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 50) {
+        navbar.classList.add('shadow-lg');
+      } else {
+        navbar.classList.remove('shadow-lg');
+      }
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
